@@ -1,6 +1,7 @@
 # Tic Tac Toe Tournament
 This project is an n x n Ti-Tac-Toe tournament.
 You can play against another player or against the computer in different levels: Easy, Medium, Hard. (Whatever, Clever, Genius)
+In this project, Basic Design Patterns are reflected such as Factory, Interfaces and Polymorphism.
 
 ## Usage
 To run the project on your personal computer

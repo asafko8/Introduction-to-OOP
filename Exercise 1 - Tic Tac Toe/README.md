@@ -5,7 +5,7 @@ You can play against another player or against the computer in different levels:
 In this project, Basic Design Patterns are reflected such as Factory, Interfaces and Polymorphism.
 
 ## Usage
-To run the project on your personal computer
+To run the project on your personal computer:
   1. Clone this repository using git clone <url>
   2. Open the cloned project in your IDE
   3. Use JDK 11 to compile all relavant files and run

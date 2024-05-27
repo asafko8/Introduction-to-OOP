@@ -5,9 +5,9 @@ The idea of this project was also to get familiar with Basic Game Development an
 
 ## Usage
 To run the project on your personal computer
-  1. Clone this repository using: git clone <url>
+  1. Clone this repository.
   2. Open the cloned project in your IDE
-  3. Use JDK 11 to compile all relavant files and run
+  3. Use JDK 11 to compile and run
 
 ## Media
 <img width="496" alt="צילום מסך 2024-05-27 ב-17 30 57" src="https://github.com/asafko8/Introduction-to-OOP/assets/170875677/1d9b3dbd-4612-475d-b1a6-e7ff8cd0ccf7">

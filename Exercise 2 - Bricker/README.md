@@ -5,7 +5,7 @@ The idea of this project was also to get familiar with Basic Game Development an
 
 ## Usage
 To run the project on your personal computer
-  1. Clone this repository using git clone <url>
+  1. Clone this repository using: git clone <url>
   2. Open the cloned project in your IDE
   3. Use JDK 11 to compile all relavant files and run
 

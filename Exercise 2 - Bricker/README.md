@@ -1,6 +1,7 @@
 # Bricker
 This project i built an "Arkanoid"-like game we called "Bricker", where some of the bricks have "special behaviors" and the rest are just disappear.
-In this project, some of the most important priciples of OOP are reflected, such as Minimal API & Single responsibility, Encapsulation & Abstraction, while doing so using Inheritance, Design Patterns (Strategy, Decorator etc.).
+In this project, some of the most important priciples of OOP are reflected, such as Minimal API & Single responsibility, Encapsulation & Abstraction, while doing so using Inheritance, Design Patterns (Strategy, Decorator and etc.).
+
 The idea of this project was also to get familiar with Basic Game Development and DanoGameLab.
 
 ## Usage

@@ -69,6 +69,7 @@ public class SubImgCharMatcher {
 
     /**
      * Adds new character to the set of characters.
+     * Takes care to calculate the brightness and normalize (if necessary)  with the insert.
      *
      * @param c The character to be added.
      */
@@ -76,13 +77,14 @@ public class SubImgCharMatcher {
         double brightness = brightnessValue(c);
         if (brightness > maxBrightness) {
             maxBrightness = brightness;
-            charBrightness.put(c, brightnessValue(c));
+            charBrightness.put(c, brightness);
             normalizeBrightnessValues();
         } else if (brightness < minBrightness) {
             minBrightness = brightness;
-            charBrightness.put(c, brightnessValue(c));
+            charBrightness.put(c, brightness);
             normalizeBrightnessValues();
         } else {
+            // Normalizes according to the min/max brightness values in charBrightness.
             double newBrightness = (brightness - minBrightness) / (maxBrightness - minBrightness);
             charBrightness.put(c, newBrightness);
         }
@@ -101,6 +103,7 @@ public class SubImgCharMatcher {
                 }
             }
         }
+        // Normalize to get brightness value in [0,1].
         return whitePixelsCounter / (CHAR_RESOLUTION * CHAR_RESOLUTION);
     }
 
@@ -115,6 +118,7 @@ public class SubImgCharMatcher {
         }
         double removedCharBrightness = charBrightness.remove(c);
         if (charBrightness.size() > 1) {
+            // Update min/max brightness values and normalize if necessary.
             if (minBrightness == removedCharBrightness) {
                 minBrightness = Collections.min(charBrightness.values());
                 normalizeBrightnessValues();

@@ -204,7 +204,7 @@ public class Shell {
     /*
      * Execute the res up/down prompt.
      */
-    private void changeResolutionPrompt(String arg) throws ExceedingBoundsException, IncorrectFormatException{
+    private void changeResolutionPrompt(String arg) throws ExceedingBoundsException, IncorrectFormatException {
         if (arg.equals(RES_UP_PROMPT)) {
             if (currResolution * CHANGE_RES_FACTOR > imageToProcess.getMaxCharsInRow()) {
                 throw new ExceedingBoundsException(RESOLUTION_EXCEED_BOUNDS_EXCEPTION);

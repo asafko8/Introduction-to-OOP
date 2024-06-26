@@ -43,6 +43,7 @@ public class AsciiArtAlgorithm {
                 col = 0;
                 row++;
             }
+            // Matching ASCII character to each sub-image.
             output[row][col] = subImgCharMatcher.getCharByImageBrightness(brightnessArray[i]);
             col++;
         }

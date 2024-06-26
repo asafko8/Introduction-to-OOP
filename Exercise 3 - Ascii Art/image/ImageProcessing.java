@@ -14,6 +14,7 @@ public class ImageProcessing {
     private static final double GREEN_TO_GRAY = 0.7152;
     private static final double BLUE_TO_GRAY = 0.0722;
     private static final double MAX_BRIGHT_VALUE = 255;
+    
     private final Image image;
     private double[] subImagesBrightnessArray;
     private final int width;
@@ -29,6 +30,7 @@ public class ImageProcessing {
      * @param image The image it wil process.
      */
     public ImageProcessing(Image image) {
+        // Replace the height and width to be closest power of 2 of the original values.
         this.height = (int)Math.pow(2, (int)Math.floor(Math.log(image.getHeight()) / Math.log(2)));
         this.width = (int)Math.pow(2, (int)Math.floor(Math.log(image.getWidth()) / Math.log(2)));
         this.image = imagePadding(image, image.getHeight(), image.getWidth());
@@ -60,7 +62,8 @@ public class ImageProcessing {
      */
     private void splitToSubImages() {
         int subImageSize = image.getWidth() / resolution;
-        subImagesBrightnessArray = new double[resolution * (image.getHeight() / subImageSize)];
+        // resolution * (image.getHeight() / subImageSize) = Number of sub-images.
+        subImagesBrightnessArray = new double[resolution * (image.getHeight() / subImageSize)]; // Holds the brightness value of the sub-image i that is in arr[i].
         int index = 0;
         for (int y = 0; y < image.getHeight(); y += subImageSize) {
             for (int x = 0; x < image.getWidth(); x += subImageSize) {
@@ -110,6 +113,7 @@ public class ImageProcessing {
                 sumGrayShades += getGrayShade(pixel[j]);
             }
         }
+        // Normalize by the number of pixels in the sub-image and the maximum RGB (255).
         return (sumGrayShades / (pixels.length * pixels[0].length)) / MAX_BRIGHT_VALUE;
     }
 

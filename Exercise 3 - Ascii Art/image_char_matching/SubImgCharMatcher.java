@@ -33,7 +33,9 @@ public class SubImgCharMatcher {
     }
 
     /*
-     * Normalizes the brightness values of all characters in the set.
+     * Normalizes the brightness values of all characters in the set by linear stretching of the min/max values.
+     * This is in order to prevent a situation where in an image with similar shades we will get the same
+     * character for every pixel.
      */
     private void normalizeBrightnessValues() {
         for (char c : charBrightness.keySet()) {
